@@ -1,0 +1,107 @@
+h1 {
+    background: radial-gradient(circle, #2d3142 0%, #4f5d75 20%, #bfc0c0 40%, #385586 60%, #ef8354 100%);
+    font-size: 5rem;
+    font-family: sans-serif;
+    font-weight: 300;
+    letter-spacing: -1;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 250%;
+    animation: gradient 10s linear infinite alternate;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+span {
+    position: relative;
+    display: inline-block;
+    margin: 30px 10px;
+}
+
+input {
+    display: inline-block;
+    outline: none;
+    width: 225px;
+    padding: 10px 0 10px 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: #4f5d75;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+input::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+}
+
+label {
+    color: #fff;
+}
+
+input+label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 15px;
+    text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
+    background: #2d3142;
+    transition: all 0.3s ease-in-out;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+input:focus,
+input:active {
+    color: #2d3142;
+    text-indent: 0;
+    background: #fff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+input:focus::-webkit-input-placeholder,
+input:active::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+input:focus+label,
+input:active+label {
+    transform: translateX(-100%);
+}
+
+.button-effect button {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 1em 3em;
+    outline: none;
+    background-size: 300% 300%;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.8), 0 1px 3px rgba(0, 0, 0, 0.08);
+    background-image: linear-gradient(to right, #2d3142 0%, #bfc0c0 50%, #2d3142 100%);
+    transition: 0.5s;
+}
+
+.button-effect button:hover {
+    background-position: right center;
+}

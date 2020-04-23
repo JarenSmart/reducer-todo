@@ -1,6 +1,8 @@
 import React, { useState, useReducer } from "react";
 import { todoReducer } from "../reducers/todoReducer";
 
+import "./Todo.css";
+
 export const initialState = {
   item: "",
   completed: false,
@@ -28,8 +30,16 @@ const Todo = () => {
 
   return (
     <div>
+      <h1 className="title">Todo List -Reduced-</h1>
       <form onSubmit={submitHandler}>
-        <input value={newTodo.item} onChange={changeHandler} />
+        <span>
+          <input
+            value={newTodo.item}
+            onChange={changeHandler}
+            placeholder="What's on your mind?"
+          />
+          <label>Add Todo</label>
+        </span>
       </form>
       {todos.map((text, index) => (
         <div
@@ -42,7 +52,9 @@ const Todo = () => {
           {text.item}
         </div>
       ))}
-      <button onClick={handleClear}>Clear Todos</button>
+      <div className="button-effect">
+        <button onClick={handleClear}>Clear Todos</button>
+      </div>
     </div>
   );
 };
